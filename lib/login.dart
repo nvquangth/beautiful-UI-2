@@ -1,5 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:login_ui/register.dart';
+import 'package:login_ui/util/transitionpage/transition_page.dart';
 
 class Login extends StatefulWidget {
   @override
@@ -139,8 +141,9 @@ class _LoginState extends State<Login> {
                 ),
               ),
               Positioned(
-                right: 15.0,
-                top: 32.0,
+                right: 5.0,
+                top: 0,
+                bottom: 0,
                 child: FloatingActionButton(
                   elevation: 0,
                   focusElevation: 0,
@@ -172,7 +175,7 @@ class _LoginState extends State<Login> {
         bottom: 170,
         left: 0,
         child: InkWell(
-          onTap: () {},
+          onTap: _gotoRegisterPage,
           borderRadius: BorderRadius.only(
               topRight: Radius.circular(50.0),
               bottomRight: Radius.circular(50.0)),
@@ -201,7 +204,7 @@ class _LoginState extends State<Login> {
           width: 250.0,
           height: 250.0,
           decoration: BoxDecoration(
-            color: Color(0xffe82c0c),
+            color: Color(0xff0c4a81),
             shape: BoxShape.circle,
           ),
         ),
@@ -214,7 +217,7 @@ class _LoginState extends State<Login> {
           width: 250.0,
           height: 250.0,
           decoration: BoxDecoration(
-            color: Color(0xfff9530e),
+            color: Color(0xff2f3192),
             shape: BoxShape.circle,
           ),
         ),
@@ -227,7 +230,7 @@ class _LoginState extends State<Login> {
           width: 250.0,
           height: 250.0,
           decoration: BoxDecoration(
-            color: Color(0xffe82c0c),
+            color: Color(0xff0c4a81),
             shape: BoxShape.circle,
           ),
         ),
@@ -240,9 +243,13 @@ class _LoginState extends State<Login> {
           width: 250.0,
           height: 250.0,
           decoration: BoxDecoration(
-            color: Color(0xfff9530e),
+            color: Color(0xff2f3192),
             shape: BoxShape.circle,
           ),
         ),
       );
+
+  _gotoRegisterPage() {
+    Navigator.push(context, SlideLeftRoute(page: Register()));
+  }
 }
